@@ -17,33 +17,39 @@ namespace ADSPortEx1
 
     class EmergencyCall : IComparable
     {
+        private string EmergencyType;
+        private string CallerName;
+        private int SeverityLevel;
 
         public EmergencyCall(string CallerName, string EmergencyType, int SeverityLevel)
         {
-            throw new NotImplementedException();
+            CallerName = CallerName;
+            EmergencyType = EmergencyType;
+            SeverityLevel = 0;
         }
 
         public string CallerName
         {
-            get { throw new NotImplementedException(); }
-            set { throw new NotImplementedException(); }
+            get { return CallerName;  }
+            set { CallerName = value; }
         }
 
         public string EmergencyType
         {
-            get { throw new NotImplementedException(); }
-            set { throw new NotImplementedException(); }
+            get { return EmergencyType; }
+            set { EmergencyType = value; }
         }
 
         public int SeverityLevel
         {
-            get { throw new NotImplementedException(); }
-            set { throw new NotImplementedException(); }
+            get { return SeverityLevel; }
+            set { SeverityLevel = value; }
         }
 
         public int CompareTo(object obj)
         {
-            throw new NotImplementedException();
+            EmergencyCall other = (EmergencyCall)obj;
+            return SeverityLevel.CompareTo(other.SeverityLevel);
         }
 
 

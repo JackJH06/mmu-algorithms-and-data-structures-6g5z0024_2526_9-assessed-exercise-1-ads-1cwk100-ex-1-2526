@@ -20,10 +20,17 @@ namespace ADSPortEx1
 
     class EmergencyQueue
     {
+        private int maxsize = 10;
+        private int [] store = new int[maxsize];
+        private int head = 0;
+        private int tail = 0;
+        private int numItems;
+
+
         // Functions for EX.1A
         public EmergencyQueue()
         {
-            throw new NotImplementedException();
+            store = new EmergencyQueue [maxsize];
         }
 
         public EmergencyQueue(int size)
@@ -33,22 +40,34 @@ namespace ADSPortEx1
 
         public void Enqueue(EmergencyCall value)
         {
-            throw new NotImplementedException();
+            store[tail] = value;
+            tail++;
+            numItems++;
+
         }
 
         public EmergencyCall Dequeue()
         {
-            throw new NotImplementedException();
+            int headItem;
+            headItem = store[head];
+            head++;
+            numItems--;
+            return headItem;
         }
 
         public EmergencyCall Peek()
         {
-            throw new NotImplementedException();
+            return EmergencyCall;
         }
 
         public int Count()
         {
-            throw new NotImplementedException();
+            int count = 0;  
+            for (int i = head; i <= tail; i++)
+            {
+                count++;
+            }
+            return count;
         }
 
         public bool IsEmpty()
