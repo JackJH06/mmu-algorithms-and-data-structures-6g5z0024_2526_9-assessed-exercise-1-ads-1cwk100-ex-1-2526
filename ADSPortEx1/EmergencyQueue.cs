@@ -84,11 +84,19 @@ namespace ADSPortEx1
 
         public EmergencyCall PeekHighestSeverity()
         {
-            for (int i = head; i <= tail; i++)
-            {
-                EmergencyCall item = store[i];
-            }
+         
+                EmergencyCall item = store[head];
+                for (int i = head + 1; i < tail; ++i)
+                {
+                    if (store[i].SeverityLevel > item.SeverityLevel)
+                    {
+                        item = store[i];
+                    }
+                }
+            return item;
 
+           
+        }
         public void DequeueFirstKCalls(int k)
         {
             throw new NotImplementedException();
