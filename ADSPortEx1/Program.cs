@@ -20,11 +20,11 @@ namespace ADSPortEx1
                 int input = int.Parse(Console.ReadLine());
                 if (input == 1)
                 {
-                    Console.WriteLine("Input Name")
+                    Console.WriteLine("Input Name");
                         string name = Console.ReadLine();
-                    Console.WriteLine("EmergencyType")
+                    Console.WriteLine("EmergencyType");
                         string type = Console.Readline();
-                    Console.WriteLine("SeverityLevel")
+                    Console.WriteLine("SeverityLevel");
                         int level = int.parse(Console.Readline());
                 }
                 if (input == 2)
@@ -32,7 +32,7 @@ namespace ADSPortEx1
                     Console.WriteLine();
                     queue.Dequeue();
                 }
-                if ((input == 3)
+                if (input == 3)
                 {
                     for (int i = 0; i < queue.Count; i++)
                     {
