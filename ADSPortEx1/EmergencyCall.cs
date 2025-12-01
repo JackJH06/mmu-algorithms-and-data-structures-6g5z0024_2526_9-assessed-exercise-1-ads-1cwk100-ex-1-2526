@@ -30,7 +30,7 @@ namespace ADSPortEx1
 
         public string CallerName
         {
-            get { return CallerName;  }
+            get { return CallerName; }
             set { CallerName = value; }
         }
 
@@ -51,6 +51,12 @@ namespace ADSPortEx1
             EmergencyCall other = (EmergencyCall)obj;
             return SeverityLevel.CompareTo(other.SeverityLevel);
         }
+
+        public override string ToString()
+        {
+            return "name" + CallerName + "type" + EmergencyType + "level" + SeverityLevel;
+        }
+
 
 
     }// End of class...

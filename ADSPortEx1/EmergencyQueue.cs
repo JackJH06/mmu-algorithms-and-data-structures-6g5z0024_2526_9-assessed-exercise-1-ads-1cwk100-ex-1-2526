@@ -14,14 +14,14 @@ namespace ADSPortEx1
 
     //Don't forget to properly commit and document your work. 
     // Commit fairly frequently with proper descriptions, i.e. commit after implementing the enqueue function...
-    
+
     //Lastly, don't forget about implementing your UI in 'Form1.cs'.
     // See lab material from week 1 to aid with this.
 
     class EmergencyQueue
     {
         private int maxsize = 10;
-        private int [] store = new int[maxsize];
+        public int[] store = new int[maxsize];
         private int head = 0;
         private int tail = 0;
         private int numItems;
@@ -30,7 +30,7 @@ namespace ADSPortEx1
         // Functions for EX.1A
         public EmergencyQueue()
         {
-            store = new EmergencyQueue [maxsize];
+            store = new EmergencyQueue[maxsize];
         }
 
         public EmergencyQueue(int size)
@@ -62,7 +62,7 @@ namespace ADSPortEx1
 
         public int Count()
         {
-            int count = 0;  
+            int count = 0;
             for (int i = head; i <= tail; i++)
             {
                 count++;
@@ -72,26 +72,27 @@ namespace ADSPortEx1
 
         public bool IsEmpty()
         {
-            throw new NotImplementedException();
+            return numItems == 0;
         }
 
         public bool IsFull()
         {
-            throw new NotImplementedException();
+            return numItems == maxsize;
         }
 
         // Functions for EX.1B
 
         public EmergencyCall PeekHighestSeverity()
         {
-            throw new NotImplementedException();
-        }
+            for (int i = head; i <= tail; i++)
+            {
+                EmergencyCall item = store[i];
+            }
 
         public void DequeueFirstKCalls(int k)
         {
             throw new NotImplementedException();
         }
-
         // Functions for EX.1C
 
 
