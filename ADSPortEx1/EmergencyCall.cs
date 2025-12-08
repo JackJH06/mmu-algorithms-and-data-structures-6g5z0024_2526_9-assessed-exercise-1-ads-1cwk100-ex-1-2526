@@ -17,33 +17,33 @@ namespace ADSPortEx1
 
     class EmergencyCall : IComparable
     {
-        private string EmergencyType;
-        private string CallerName;
-        private int SeverityLevel;
+        private string emergencyType;
+        private string callerName;
+        private int severityLevel;
 
-        public EmergencyCall(string CallerName, string EmergencyType, int SeverityLevel)
+        public EmergencyCall(string callerName, string emergencyType, int severityLevel)
         {
-            CallerName = CallerName;
+            this.callerName = CallerName;
             EmergencyType = EmergencyType;
             SeverityLevel = 0;
         }
 
         public string CallerName
         {
-            get { return CallerName; }
-            set { CallerName = value; }
+            get { return callerName; }
+            set { callerName = value; }
         }
 
         public string EmergencyType
         {
-            get { return EmergencyType; }
-            set { EmergencyType = value; }
+            get { return emergencyType; }
+            set { emergencyType = value; }
         }
 
         public int SeverityLevel
         {
-            get { return SeverityLevel; }
-            set { SeverityLevel = value; }
+            get { return severityLevel; }
+            set { severityLevel = value; }
         }
 
         public int CompareTo(object obj)

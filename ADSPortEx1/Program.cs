@@ -17,24 +17,24 @@ namespace ADSPortEx1
             while (true)
             {
                 Console.WriteLine("1 insert item \n 2 remove and show item \n 3 count and show item \n 4 find highest severity level \n 5 dequeue k numbers \n");
-                int input = int.Parse(Console.ReadLine());
-                if (input == 1)
+                string input = Console.ReadLine();
+                if (input == "1")
                 {
                     Console.WriteLine("Input Name");
                         string name = Console.ReadLine();
                     Console.WriteLine("EmergencyType");
-                        string type = Console.Readline();
+                        string type = Console.ReadLine();
                     Console.WriteLine("SeverityLevel");
-                        int level = int.parse(Console.Readline());
+                        int level = int.Parse(Console.ReadLine());
                 }
-                if (input == 2)
+                if (input == "2")
                 {
                     Console.WriteLine();
                     queue.Dequeue();
                 }
-                if (input == 3)
+                if (input == "3")
                 {
-                    for (int i = 0; i < queue.Count; i++)
+                    for (int i = 0; i < queue.Count(); i++)
                     {
                         Console.WriteLine(queue.store[i].ToString());
                     }

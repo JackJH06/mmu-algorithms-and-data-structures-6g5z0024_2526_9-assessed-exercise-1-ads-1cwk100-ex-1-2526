@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,7 +22,7 @@ namespace ADSPortEx1
     class EmergencyQueue
     {
         private int maxsize = 10;
-        public int[] store = new int[maxsize];
+        public EmergencyCall[] store;
         private int head = 0;
         private int tail = 0;
         private int numItems;
@@ -30,34 +31,42 @@ namespace ADSPortEx1
         // Functions for EX.1A
         public EmergencyQueue()
         {
-            store = new EmergencyQueue[maxsize];
+            store = new EmergencyCall[maxsize];
         }
 
         public EmergencyQueue(int size)
         {
-            throw new NotImplementedException();
+            maxsize = size;
+            store = new EmergencyCall[maxsize];
         }
 
         public void Enqueue(EmergencyCall value)
         {
+            if (numItems == maxsize)
+            {
+                Console.WriteLine("Queue is full!");
+                return;
+            }
             store[tail] = value;
-            tail++;
+            tail = (tail+ 1) % maxsize;
             numItems++;
-
         }
 
         public EmergencyCall Dequeue()
         {
-            int headItem;
-            headItem = store[head];
-            head++;
+            if (numItems == 0)
+            {
+                Console.WriteLine("Queue is empty!");
+            }
+            EmergencyCall item = store[head];
+            head = (head + 1) % maxsize;
             numItems--;
-            return headItem;
+            return item;
         }
 
         public EmergencyCall Peek()
         {
-            return EmergencyCall;
+            return store[head];
         }
 
         public int Count()
@@ -99,7 +108,10 @@ namespace ADSPortEx1
         }
         public void DequeueFirstKCalls(int k)
         {
-            throw new NotImplementedException();
+            for (int i =0; i < k; ++i)
+            {
+                Dequeue();
+            }
         }
         // Functions for EX.1C
 
